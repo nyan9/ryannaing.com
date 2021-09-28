@@ -8,15 +8,10 @@ import {
   FormErrorMessage,
   Input,
   Textarea,
-  Box,
   Button,
   useColorModeValue,
   VStack,
   Skeleton,
-  // Alert,
-  // AlertIcon,
-  // AlertTitle,
-  // AlertDescription,
   useToast,
 } from "@chakra-ui/react";
 import { useLinkColor } from "components/ui/theme";
@@ -67,16 +62,15 @@ const ContactForm = () => {
           });
 
           setTimeout(() => {
+            toast({
+              title: "Success🍾 I will respond ASAP!",
+              status: "success",
+              isClosable: true,
+            });
+            setFieldValue("success", true);
             setSubmitting(false);
+            resetForm();
           }, 2000);
-
-          toast({
-            title: `Success`,
-            status: "success",
-            isClosable: true,
-          });
-          setFieldValue("success", true);
-          resetForm();
         } catch (err) {
           setSubmitting(false);
           setFieldValue("success", false);
@@ -171,64 +165,6 @@ const ContactForm = () => {
               )}
             </Field>
 
-            {/* {values.name && values.email && values.message && (
-              <Field>
-                <FastField
-                  component={Recaptcha}
-                  sitekey={process.env.NEXT_PUBLIC_PORTFOLIO_RECAPTCHA_KEY}
-                  name='recaptcha'
-                  onChange={(value: string) =>
-                    setFieldValue("recaptcha", value)
-                  }
-                />
-                <FormErrorMessage>{errors.recaptcha}</FormErrorMessage>
-              </Field>
-            )} */}
-
-            {/* <Alert
-              status='success'
-              variant='subtle'
-              flexDirection='column'
-              alignItems='center'
-              justifyContent='center'
-              textAlign='center'
-              height='200px'
-            >
-              <AlertIcon boxSize='40px' mr={0} />
-              <AlertTitle mt={4} mb={1} fontSize='lg'>
-                Your message has been successfully sent.
-              </AlertTitle>
-              <AlertDescription maxWidth='sm'>
-                I will get back to you ASAP!
-              </AlertDescription>
-            </Alert>
-
-            {
-              <VStack
-                p={4}
-                bg={useColorModeValue("cyan.100", "green.300")}
-                rounded='3xl'
-                borderWidth='1px'
-                borderColor={useColorModeValue("cyan.400", "green.100")}
-                w='100%'
-                textAlign='center'
-                align='center'
-                spacing={2}
-                cursor='pointer'
-                _hover={{ shadow: "lg" }}
-              >
-                <Box
-                  as='h2'
-                  fontSize='2xl'
-                  fontWeight='400'
-                  mt={5}
-                  textAlign='left'
-                >
-                  Your message has been successfully sent, I will get back to
-                  you ASAP!
-                </Box>
-              </VStack>
-            } */}
             <Skeleton rounded='xl' isLoaded={!isSubmitting}>
               <Button
                 type='submit'
