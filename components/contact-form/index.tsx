@@ -34,7 +34,7 @@ const ContactMe = () => {
           <ContactForm />
         </Box>
 
-        <VStack p={12} spacing={4}>
+        <VStack pt={[12, 12, 0]} spacing={4}>
           <ContactCard
             logo={<FaPhoneAlt />}
             info='(917)743-9854'

@@ -87,7 +87,7 @@ const ContactForm = () => {
             rounded='xl'
             borderWidth='1px'
             borderColor={useColorModeValue("gray.100", "gray.700")}
-            w='100%'
+            w={["100%", "100%", "90%"]}
             textAlign='center'
             align='center'
             spacing={2}
