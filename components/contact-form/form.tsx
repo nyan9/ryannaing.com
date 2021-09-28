@@ -60,7 +60,7 @@ const ContactForm = () => {
           });
           setSubmitting(false);
           setFieldValue("success", true);
-          // setTimeout(() => resetForm(), 6000);
+          setTimeout(() => resetForm(), 6000);
         } catch (err) {
           setSubmitting(false);
           setFieldValue("success", false);
@@ -153,14 +153,12 @@ const ContactForm = () => {
             )} */}
 
             {values.success && (
-              <Field>
-                <Center>
-                  <h4>
-                    Your message has been successfully sent, I will get back to
-                    you ASAP!
-                  </h4>
-                </Center>
-              </Field>
+              <Center>
+                <h4>
+                  Your message has been successfully sent, I will get back to
+                  you ASAP!
+                </h4>
+              </Center>
             )}
 
             <Button
