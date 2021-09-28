@@ -1,0 +1,32 @@
+export const projectsList = [
+  {
+    id: 1,
+    title: "TumblyTube",
+    link: "https://tumblytube.herokuapp.com/#/",
+    github: "https://github.com/nyan9/TumblyTube#readme",
+    logo: "/assets/images/projects/tumblytube.gif",
+    blurHash: "UDONa%%hem$y%$^*RPNdH=SiRPae~WM{j]t7",
+    desc: `lorem ipsum`,
+    technologies: ["aws", "rails", "react", "redux", "javascript"],
+  },
+  {
+    id: 2,
+    title: "Connect 4riends",
+    link: "https://connect4riends.herokuapp.com/#/",
+    github: "https://github.com/nyan9/connectFriends#readme",
+    logo: "/assets/images/projects/connect4.gif",
+    blurHash: "LG8hn4r?EdR%Q3WVsCbI7.X8-Ds;",
+    desc: `lorem ipsum`,
+    technologies: ["mongodb", "express", "react", "node", "javascript"],
+  },
+  {
+    id: 3,
+    title: "Text Particles",
+    link: "https://nyan9.github.io/textParticles/",
+    github: "https://github.com/nyan9/textParticles",
+    logo: "/assets/images/projects/textparticles.gif",
+    blurHash: "L02h|2%iMdx^?wx_X5ogtRWAV?og",
+    desc: `lorem ipsum`,
+    technologies: ["javascript", "canvas"],
+  },
+];
