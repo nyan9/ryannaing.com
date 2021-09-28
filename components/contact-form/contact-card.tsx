@@ -1,52 +1,93 @@
 import React from "react";
 import {
-  HStack,
   VStack,
   Text,
   useColorModeValue,
   Box,
-  Image,
-  Skeleton,
+  Link,
+  useToast,
 } from "@chakra-ui/react";
 import { MotionBox } from "../ui/motion";
 import { item } from "../ui/page-transitions";
-import { useLinkColor } from "components/ui/theme";
 
-const ContactCard = ({ logo, info }) => {
-  const linkColor = useLinkColor();
+const ContactCard = ({ logo, info, color, type }) => {
+  const toast = useToast();
+
+  const copyTextToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text).then(
+      () => {
+        toast({
+          title: "📋 Copied to clipboard!",
+          status: "success",
+          isClosable: true,
+        });
+      },
+      () =>
+        toast({
+          title: "🚨 Failed. Try copying again",
+          status: "error",
+          isClosable: true,
+        })
+    );
+  };
 
   return (
     <MotionBox variants={item} width='100%'>
       <MotionBox whileHover={{ y: -5 }}>
-        <VStack
-          p={4}
-          bg={useColorModeValue("white", "gray.800")}
-          rounded='xl'
-          borderWidth='1px'
-          borderColor={useColorModeValue("gray.100", "gray.700")}
-          w='100%'
-          textAlign='center'
-          align='center'
-          spacing={2}
-          cursor='pointer'
-          _hover={{ shadow: "md" }}
-        >
-          <Box p={1} position='relative' color={linkColor}>
-            {logo}
-          </Box>
-          <VStack align='center' maxW='lg' h='100%'>
+        {type === "email" ? (
+          <VStack
+            as={Link}
+            href={"mailto:RynNaing@gmail.com"}
+            p={4}
+            bg={useColorModeValue("white", "gray.800")}
+            rounded='xl'
+            borderWidth='1px'
+            borderColor={useColorModeValue("gray.100", "gray.700")}
+            w='100%'
+            textAlign='center'
+            align='center'
+            spacing={2}
+            cursor='pointer'
+            _hover={{ shadow: "md" }}
+          >
+            <Box p={1} position='relative' color={color}>
+              {logo}
+            </Box>
+
             <VStack spacing={0} align='center' flexGrow={1}>
-              <Text
-                fontWeight='bold'
-                fontSize='md'
-                noOfLines={1}
-                color={linkColor}
-              >
+              <Text fontWeight='bold' fontSize='md' noOfLines={1} color={color}>
                 {info}
               </Text>
             </VStack>
           </VStack>
-        </VStack>
+        ) : (
+          <VStack
+            onClick={() => {
+              copyTextToClipboard(info);
+            }}
+            p={4}
+            bg={useColorModeValue("white", "gray.800")}
+            rounded='xl'
+            borderWidth='1px'
+            borderColor={useColorModeValue("gray.100", "gray.700")}
+            w='100%'
+            textAlign='center'
+            align='center'
+            spacing={2}
+            cursor='pointer'
+            _hover={{ shadow: "md" }}
+          >
+            <Box p={1} position='relative' color={color}>
+              {logo}
+            </Box>
+
+            <VStack spacing={0} align='center' flexGrow={1}>
+              <Text fontWeight='bold' fontSize='md' noOfLines={1} color={color}>
+                {info}
+              </Text>
+            </VStack>
+          </VStack>
+        )}
       </MotionBox>
     </MotionBox>
   );

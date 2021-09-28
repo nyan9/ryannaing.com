@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedin, FaCopy } from "react-icons/fa";
 
 const siteConfig = {
-  copyright: `${new Date().getFullYear()} Ryan Naing.`,
+  copyright: `${new Date().getFullYear()} | Ryan Naing.`,
   author: {
     name: "Ryan Naing",
     accounts: [
