@@ -62,15 +62,22 @@ const ContactForm = () => {
           });
 
           setTimeout(() => {
-            toast({
-              title: "Success🍾 I will respond ASAP!",
-              status: "success",
-              isClosable: true,
-            });
-            setFieldValue("success", true);
             setSubmitting(false);
-            resetForm();
-          }, 2000);
+
+            setTimeout(() => {
+              resetForm();
+
+              setTimeout(() => {
+                toast({
+                  title: "🍾 Success 🍾 I will respond ASAP!",
+                  status: "success",
+                  isClosable: true,
+                });
+              }, 500);
+            }, 1000);
+          }, 1500);
+
+          setFieldValue("success", true);
         } catch (err) {
           setSubmitting(false);
           setFieldValue("success", false);
