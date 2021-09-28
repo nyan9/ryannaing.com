@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Formik, Form, Field, FastField, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import Recaptcha from "react-google-recaptcha";
 import * as Yup from "yup";
 import {
@@ -62,22 +62,16 @@ const ContactForm = () => {
           });
 
           setTimeout(() => {
-            setSubmitting(false);
+            toast({
+              title: "🍾 Success 🍾 I will respond ASAP!",
+              status: "success",
+              isClosable: true,
+            });
+          }, 1000);
 
-            setTimeout(() => {
-              resetForm();
-
-              setTimeout(() => {
-                toast({
-                  title: "🍾 Success 🍾 I will respond ASAP!",
-                  status: "success",
-                  isClosable: true,
-                });
-              }, 500);
-            }, 1000);
-          }, 1500);
-
+          setSubmitting(false);
           setFieldValue("success", true);
+          resetForm();
         } catch (err) {
           setSubmitting(false);
           setFieldValue("success", false);
