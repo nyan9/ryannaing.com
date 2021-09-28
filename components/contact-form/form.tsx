@@ -48,7 +48,7 @@ const ContactForm = () => {
             method: "POST",
             url:
               process.env.NODE_ENV !== "development"
-                ? `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/api/contact`
+                ? `/api/contact`
                 : "http://localhost:3000/api/contact",
             headers: {
               "Content-Type": "application/json",
