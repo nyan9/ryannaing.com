@@ -12,8 +12,16 @@ const ORANGE = "#ff9400";
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
-    <VStack align='start' spacing={8} mb={10}>
-      <Header underlineColor={ORANGE} mt={0} mb={0} id='projects'>
+    <VStack
+      id='projects'
+      align='start'
+      justify='center'
+      spacing={8}
+      py='100px'
+      height={"max-content"}
+      sx={{ scrollSnapAlign: "start end" }}
+    >
+      <Header underlineColor={ORANGE} mb={0}>
         Projects
       </Header>
       <AnimateSharedLayout>

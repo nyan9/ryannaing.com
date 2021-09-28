@@ -43,9 +43,16 @@ const Skills = ({ skills }) => {
 
   return (
     <PageSlideFade>
-      <VStack align='start' mb={10}>
+      <VStack
+        id='skills'
+        align='start'
+        justify='center'
+        py='100px'
+        height={"max-content"}
+        sx={{ scrollSnapAlign: "start" }}
+      >
         <Section>
-          <Header mt={0} mb={0} id='skills'>
+          <Header mt={0} mb={0}>
             Tech Stack
           </Header>
         </Section>

@@ -7,8 +7,16 @@ import ContactCard from "./contact-card";
 
 const ContactMe = () => {
   return (
-    <VStack align='start' mb={10}>
-      <Header mt={0} mb={0} id='contact-me'>
+    <VStack
+      id='contact'
+      align='start'
+      justify='center'
+      py='80px'
+      height={"max-content"}
+      mb={0}
+      sx={{ scrollSnapAlign: "start" }}
+    >
+      <Header mt={0} mb={0}>
         Send me a message!
       </Header>
 

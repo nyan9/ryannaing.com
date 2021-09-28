@@ -28,14 +28,14 @@ const webLinks = [
   { name: "Resume", href: "#" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
-  { name: "Contact Me", href: "#contact-me" },
+  { name: "Contact Me", href: "#contact" },
 ];
 
 const mobileLinks = [
   { name: "Resume", href: "#" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
-  { name: "Contact Me", href: "#contact-me" },
+  { name: "Contact Me", href: "#contact" },
 ];
 
 interface NavLinkProps {

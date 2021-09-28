@@ -8,17 +8,23 @@ function AppLayout(props) {
     <Fragment>
       <TopNav />
       <Box
-        textAlign='center'
-        fontSize='xl'
-        w={["90%", "85%", "80%"]}
-        maxW={800}
-        mx='auto'
+        h='100vh'
+        overflowY='scroll'
+        sx={{ scrollBehavior: "smooth", scrollSnapType: "y proximity" }}
       >
-        <Box pt={"7rem"} pb={10}>
-          {props.children}
+        <Box
+          textAlign='center'
+          fontSize='xl'
+          w={["90%", "85%", "80%"]}
+          maxW={800}
+          mx='auto'
+        >
+          <Box pt={"7rem"} pb={10}>
+            {props.children}
+          </Box>
         </Box>
+        <Footer />
       </Box>
-      <Footer />
     </Fragment>
   );
 }

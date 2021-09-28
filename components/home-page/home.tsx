@@ -3,7 +3,6 @@ import {
   Avatar,
   Box,
   Text,
-  Badge,
   Stack,
   Link,
   UnorderedList,
@@ -12,22 +11,23 @@ import {
 } from "@chakra-ui/react";
 import { MotionBox, MotionFlex } from "components/ui/motion";
 import Header from "components/layout/header";
-import Projects from "./projects";
 import NextLink from "next/link";
 import { useLinkColor } from "components/ui/theme";
 
 const ANIMATION_DURATION = 0.5;
 const ORANGE = "#ff9400";
 
-interface HomeProps {
-  projects: project[];
-}
-
-const Home: React.FC<HomeProps> = ({ projects }) => {
+const Home: React.FC = () => {
   const linkColor = useLinkColor();
 
   return (
-    <Flex direction='column' align='center'>
+    <Flex
+      direction='column'
+      justify='center'
+      align='center'
+      h='100vh'
+      sx={{ scrollSnapAlign: "center" }}
+    >
       <Flex direction={["column", "column", "row"]}>
         <MotionBox
           opacity='0'
@@ -125,7 +125,6 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
               </ListItem>
             </UnorderedList>
           </Stack>
-          <Projects projects={projects} />
         </Box>
       </MotionBox>
     </Flex>
