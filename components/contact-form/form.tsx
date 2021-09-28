@@ -25,7 +25,7 @@ const ContactForm = () => {
         name: "",
         email: "",
         message: "",
-        recaptcha: "",
+        // recaptcha: "",
         success: false,
       }}
       validationSchema={Yup.object().shape({
@@ -34,10 +34,10 @@ const ContactForm = () => {
           .email("Invalid email")
           .required("Email field is required"),
         message: Yup.string().required("Message field is required"),
-        recaptcha:
-          process.env.NODE_ENV !== "development"
-            ? Yup.string().required("Robots are not welcome yet!")
-            : Yup.string(),
+        // recaptcha:
+        //   process.env.NODE_ENV !== "development"
+        //     ? Yup.string().required("Robots are not welcome yet!")
+        //     : Yup.string(),
       })}
       onSubmit={async (
         { name, email, message },
@@ -139,22 +139,19 @@ const ContactForm = () => {
               )}
             </Field>
 
-            {values.name &&
-              values.email &&
-              values.message &&
-              process.env.NODE_ENV !== "development" && (
-                <Field>
-                  <FastField
-                    component={Recaptcha}
-                    sitekey={process.env.NEXT_PUBLIC_PORTFOLIO_RECAPTCHA_KEY}
-                    name='recaptcha'
-                    onChange={(value: string) =>
-                      setFieldValue("recaptcha", value)
-                    }
-                  />
-                  <FormErrorMessage>{errors.recaptcha}</FormErrorMessage>
-                </Field>
-              )}
+            {/* {values.name && values.email && values.message && (
+              <Field>
+                <FastField
+                  component={Recaptcha}
+                  sitekey={process.env.NEXT_PUBLIC_PORTFOLIO_RECAPTCHA_KEY}
+                  name='recaptcha'
+                  onChange={(value: string) =>
+                    setFieldValue("recaptcha", value)
+                  }
+                />
+                <FormErrorMessage>{errors.recaptcha}</FormErrorMessage>
+              </Field>
+            )} */}
 
             {values.success && (
               <Field>
