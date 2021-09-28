@@ -8,15 +8,22 @@ import {
   FormErrorMessage,
   Input,
   Textarea,
-  Center,
+  Box,
   Button,
   useColorModeValue,
   VStack,
+  Skeleton,
+  // Alert,
+  // AlertIcon,
+  // AlertTitle,
+  // AlertDescription,
+  useToast,
 } from "@chakra-ui/react";
 import { useLinkColor } from "components/ui/theme";
 
 const ContactForm = () => {
   const linkColor = useLinkColor();
+  const toast = useToast();
 
   return (
     <Formik
@@ -58,9 +65,18 @@ const ContactForm = () => {
               message,
             }),
           });
-          setSubmitting(false);
+
+          setTimeout(() => {
+            setSubmitting(false);
+          }, 2000);
+
+          toast({
+            title: `Success`,
+            status: "success",
+            isClosable: true,
+          });
           setFieldValue("success", true);
-          setTimeout(() => resetForm(), 3000);
+          resetForm();
         } catch (err) {
           setSubmitting(false);
           setFieldValue("success", false);
@@ -89,13 +105,19 @@ const ContactForm = () => {
                   isInvalid={form.errors.name && form.touched.name}
                   isRequired
                 >
-                  <FormLabel htmlFor='name'>Name</FormLabel>
-                  <Input
-                    {...field}
-                    id='name'
-                    focusBorderColor='#53c8c4'
-                    placeholder='Ryan'
-                  />
+                  <Skeleton w='30%' rounded='xl' isLoaded={!isSubmitting}>
+                    <FormLabel htmlFor='name'>Name</FormLabel>
+                  </Skeleton>
+
+                  <Skeleton w='100%' rounded='xl' isLoaded={!isSubmitting}>
+                    <Input
+                      {...field}
+                      id='name'
+                      focusBorderColor='#53c8c4'
+                      placeholder='Ryan'
+                    />
+                  </Skeleton>
+
                   <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                 </FormControl>
               )}
@@ -107,13 +129,18 @@ const ContactForm = () => {
                   isInvalid={form.errors.email && form.touched.email}
                   isRequired
                 >
-                  <FormLabel htmlFor='email'>Email</FormLabel>
-                  <Input
-                    {...field}
-                    id='email'
-                    focusBorderColor='#53c8c4'
-                    placeholder='rynnaing@gmail.com'
-                  />
+                  <Skeleton w='30%' rounded='xl' isLoaded={!isSubmitting}>
+                    <FormLabel htmlFor='email'>Email</FormLabel>
+                  </Skeleton>
+
+                  <Skeleton w='100%' rounded='xl' isLoaded={!isSubmitting}>
+                    <Input
+                      {...field}
+                      id='email'
+                      focusBorderColor='#53c8c4'
+                      placeholder='rynnaing@gmail.com'
+                    />
+                  </Skeleton>
 
                   <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                 </FormControl>
@@ -126,13 +153,19 @@ const ContactForm = () => {
                   isInvalid={form.errors.message && form.touched.message}
                   isRequired
                 >
-                  <FormLabel htmlFor='message'>Message</FormLabel>
-                  <Textarea
-                    {...field}
-                    id='message'
-                    focusBorderColor='#53c8c4'
-                    placeholder='Your message...'
-                  />
+                  <Skeleton w='30%' rounded='xl' isLoaded={!isSubmitting}>
+                    <FormLabel htmlFor='message'>Message</FormLabel>
+                  </Skeleton>
+
+                  <Skeleton w='100%' rounded='xl' isLoaded={!isSubmitting}>
+                    <Textarea
+                      {...field}
+                      id='message'
+                      focusBorderColor='#53c8c4'
+                      placeholder='Your message...'
+                    />
+                  </Skeleton>
+
                   <FormErrorMessage>{form.errors.message}</FormErrorMessage>
                 </FormControl>
               )}
@@ -152,25 +185,60 @@ const ContactForm = () => {
               </Field>
             )} */}
 
-            {values.success && (
-              <Field>
-                <Center>
-                  <h4>
-                    Your message has been successfully sent, I will get back to
-                    you ASAP!
-                  </h4>
-                </Center>
-              </Field>
-            )}
-
-            <Button
-              type='submit'
-              bg={linkColor}
-              color='white'
-              disabled={isSubmitting}
+            {/* <Alert
+              status='success'
+              variant='subtle'
+              flexDirection='column'
+              alignItems='center'
+              justifyContent='center'
+              textAlign='center'
+              height='200px'
             >
-              Submit
-            </Button>
+              <AlertIcon boxSize='40px' mr={0} />
+              <AlertTitle mt={4} mb={1} fontSize='lg'>
+                Your message has been successfully sent.
+              </AlertTitle>
+              <AlertDescription maxWidth='sm'>
+                I will get back to you ASAP!
+              </AlertDescription>
+            </Alert>
+
+            {
+              <VStack
+                p={4}
+                bg={useColorModeValue("cyan.100", "green.300")}
+                rounded='3xl'
+                borderWidth='1px'
+                borderColor={useColorModeValue("cyan.400", "green.100")}
+                w='100%'
+                textAlign='center'
+                align='center'
+                spacing={2}
+                cursor='pointer'
+                _hover={{ shadow: "lg" }}
+              >
+                <Box
+                  as='h2'
+                  fontSize='2xl'
+                  fontWeight='400'
+                  mt={5}
+                  textAlign='left'
+                >
+                  Your message has been successfully sent, I will get back to
+                  you ASAP!
+                </Box>
+              </VStack>
+            } */}
+            <Skeleton rounded='xl' isLoaded={!isSubmitting}>
+              <Button
+                type='submit'
+                bg={linkColor}
+                color='white'
+                disabled={isSubmitting}
+              >
+                Submit
+              </Button>
+            </Skeleton>
           </VStack>
         </Form>
       )}
