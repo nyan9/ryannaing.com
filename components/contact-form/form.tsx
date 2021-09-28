@@ -6,7 +6,6 @@ import {
   FormControl,
   FormLabel,
   FormErrorMessage,
-  FormHelperText,
   Input,
   Textarea,
   Center,
@@ -61,7 +60,7 @@ const ContactForm = () => {
           });
           setSubmitting(false);
           setFieldValue("success", true);
-          setTimeout(() => resetForm(), 6000);
+          // setTimeout(() => resetForm(), 6000);
         } catch (err) {
           setSubmitting(false);
           setFieldValue("success", false);
