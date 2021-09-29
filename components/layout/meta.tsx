@@ -16,10 +16,7 @@ const Meta = ({ title, keywords, description, image }: Props): JSX.Element => {
       <meta name='keywords' content={keywords} />
       <meta name='description' content={description} />
       <meta property='og:title' content={title} />
-      <meta
-        property='og:image'
-        content={image ? image : "%PUBLIC_URL%/logo.png"}
-      />
+      <meta property='og:image' content={image ? image : "/logo.png"} />
       <title>{title}</title>
     </Head>
   );
