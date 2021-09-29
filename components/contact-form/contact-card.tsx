@@ -5,7 +5,16 @@ import {
   useColorModeValue,
   Box,
   Link,
+  Button,
   useToast,
+  Portal,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
 } from "@chakra-ui/react";
 import { MotionBox } from "../ui/motion";
 import { item } from "../ui/page-transitions";
@@ -35,58 +44,106 @@ const ContactCard = ({ logo, info, color, type }) => {
     <MotionBox variants={item} width='100%'>
       <MotionBox whileHover={{ y: -5 }}>
         {type === "email" ? (
-          <VStack
-            as={Link}
-            href={"mailto:RynNaing@gmail.com"}
-            p={4}
-            bg={useColorModeValue("white", "gray.800")}
-            rounded='xl'
-            borderWidth='1px'
-            borderColor={useColorModeValue("gray.100", "gray.700")}
-            w='100%'
-            textAlign='center'
-            align='center'
-            spacing={2}
-            cursor='pointer'
-            _hover={{ shadow: "md" }}
-          >
-            <Box p={1} position='relative' color={color}>
-              {logo}
-            </Box>
+          <Popover>
+            <PopoverTrigger>
+              <VStack
+                p={4}
+                bg={useColorModeValue("white", "gray.800")}
+                rounded='xl'
+                borderWidth='1px'
+                borderColor={useColorModeValue("gray.100", "gray.700")}
+                w='100%'
+                textAlign='center'
+                align='center'
+                spacing={2}
+                cursor='pointer'
+                _hover={{ shadow: "md" }}
+              >
+                <Box p={1} position='relative' color={color}>
+                  {logo}
+                </Box>
 
-            <VStack spacing={0} align='center' flexGrow={1}>
-              <Text fontWeight='bold' fontSize='md' noOfLines={1} color={color}>
-                {info}
-              </Text>
-            </VStack>
-          </VStack>
+                <VStack spacing={0} align='center' flexGrow={1}>
+                  <Text
+                    fontWeight='bold'
+                    fontSize='md'
+                    noOfLines={1}
+                    color={color}
+                  >
+                    {info}
+                  </Text>
+                </VStack>
+              </VStack>
+            </PopoverTrigger>
+            <Portal>
+              <PopoverContent>
+                <PopoverArrow />
+                <PopoverHeader>Open Your Email Client?</PopoverHeader>
+                <PopoverCloseButton />
+                <PopoverBody>
+                  <Button
+                    as={Link}
+                    href={"mailto:RynNaing@gmail.com"}
+                    color={useColorModeValue("white", "gray.700")}
+                    bg={color}
+                  >
+                    Open
+                  </Button>
+                </PopoverBody>
+              </PopoverContent>
+            </Portal>
+          </Popover>
         ) : (
-          <VStack
-            onClick={() => {
-              copyTextToClipboard(info);
-            }}
-            p={4}
-            bg={useColorModeValue("white", "gray.800")}
-            rounded='xl'
-            borderWidth='1px'
-            borderColor={useColorModeValue("gray.100", "gray.700")}
-            w='100%'
-            textAlign='center'
-            align='center'
-            spacing={2}
-            cursor='pointer'
-            _hover={{ shadow: "md" }}
-          >
-            <Box p={1} position='relative' color={color}>
-              {logo}
-            </Box>
+          <Popover>
+            <PopoverTrigger>
+              <VStack
+                p={4}
+                bg={useColorModeValue("white", "gray.800")}
+                rounded='xl'
+                borderWidth='1px'
+                borderColor={useColorModeValue("gray.100", "gray.700")}
+                w='100%'
+                textAlign='center'
+                align='center'
+                spacing={2}
+                cursor='pointer'
+                _hover={{ shadow: "md" }}
+              >
+                <Box p={1} position='relative' color={color}>
+                  {logo}
+                </Box>
 
-            <VStack spacing={0} align='center' flexGrow={1}>
-              <Text fontWeight='bold' fontSize='md' noOfLines={1} color={color}>
-                {info}
-              </Text>
-            </VStack>
-          </VStack>
+                <VStack spacing={0} align='center' flexGrow={1}>
+                  <Text
+                    fontWeight='bold'
+                    fontSize='md'
+                    noOfLines={1}
+                    color={color}
+                  >
+                    {info}
+                  </Text>
+                </VStack>
+              </VStack>
+            </PopoverTrigger>
+            <Portal>
+              <PopoverContent>
+                <PopoverArrow />
+                <PopoverHeader>Copy my number?</PopoverHeader>
+                <PopoverCloseButton />
+                <PopoverBody>
+                  <Button
+                    onClick={() => {
+                      copyTextToClipboard(info);
+                    }}
+                    color={useColorModeValue("white", "gray.700")}
+                    bg={color}
+                  >
+                    Copy
+                  </Button>
+                </PopoverBody>
+              </PopoverContent>
+            </Portal>
+          </Popover>
         )}
       </MotionBox>
     </MotionBox>
