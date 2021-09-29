@@ -48,8 +48,10 @@ const ContactMe = () => {
             color={linkColor}
             type='email'
           />
+
           <Divider />
-          <HStack w='100%' justifyContent='space-between'>
+
+          <HStack w='100%' pb='12' justifyContent='space-between'>
             {siteConfig.author.accounts.map((sc, index) => (
               <Tooltip key={index} label={sc.label} aria-label={sc.label}>
                 <IconButton
