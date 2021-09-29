@@ -18,7 +18,7 @@ const ContactMe = () => {
       py='80px'
       height={"max-content"}
       mb={0}
-      sx={{ scrollSnapAlign: "start" }}
+      sx={{ scrollSnapAlign: "end" }}
     >
       <Header mt={0} mb={0}>
         Send me a message!

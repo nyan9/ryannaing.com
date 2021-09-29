@@ -4,17 +4,14 @@ import { GA_TRACKING_ID } from "lib/gtag";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang='en'>
         <Head>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel='icon' href='favicon.ico' />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-            rel="stylesheet"
+            href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'
+            rel='stylesheet'
           />
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=`}
-          />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=`} />
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -24,7 +21,7 @@ class MyDocument extends Document {
             gtag('config', '', {
               page_path: window.location.pathname,
             });
-          `
+          `,
             }}
           />
         </Head>

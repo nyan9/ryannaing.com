@@ -3,18 +3,11 @@ import {
   Flex,
   Avatar,
   HStack,
-  Button,
-  Text,
   Link,
   IconButton,
   useDisclosure,
   useColorModeValue,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
   Stack,
-  Icon,
 } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
@@ -64,8 +57,8 @@ const NavLink = (props: NavLinkProps) => {
           textDecoration: "none",
           bg: link.bg,
         }}
-        bg={router.asPath.includes(props.href) ? link.bg : "transparent"}
-        color={router.asPath.includes(props.href) ? link.color : "inherit"}
+        // bg={router.asPath.includes(props.href) ? link.bg : "transparent"}
+        // color={router.asPath.includes(props.href) ? link.color : "inherit"}
         onClick={() => props.onClose()}
       >
         {props.name}
@@ -76,7 +69,6 @@ const NavLink = (props: NavLinkProps) => {
 
 export default function TopNav() {
   const linkColor = useLinkColor();
-  const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -106,9 +98,13 @@ export default function TopNav() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <NextLink href={"#"} passHref>
-                <Avatar as={Link} size={"sm"} src={""} />
-              </NextLink>
+              <Avatar
+                bg={linkColor}
+                as={Link}
+                href={"#welcome"}
+                size={"sm"}
+                src='/assets/images/hi.png'
+              />
             </Box>
             <HStack
               as={"nav"}

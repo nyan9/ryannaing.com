@@ -24,6 +24,7 @@ const Home: React.FC = () => {
 
   return (
     <Flex
+      id='welcome'
       position='relative'
       direction='column'
       justify='center'
@@ -48,7 +49,7 @@ const Home: React.FC = () => {
           m='auto'
           mb={[16, 16, "auto"]}
         >
-          <Avatar size={"2xl"} src='' />
+          <Avatar bg={linkColor} size={"2xl"} src='/assets/images/hi.png' />
         </MotionBox>
         <MotionFlex
           ml={["auto", "auto", 16]}
@@ -70,7 +71,7 @@ const Home: React.FC = () => {
             },
           }}
         >
-          <Header underlineColor={ORANGE} emoji='👋' mt={0} id='welcome'>
+          <Header underlineColor={ORANGE} emoji='👋' mt={0}>
             Hello!
           </Header>
           <Box as='h2' fontSize='2xl' fontWeight='400' textAlign='left'>
