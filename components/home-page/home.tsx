@@ -1,18 +1,20 @@
 import {
-  Flex,
   Avatar,
-  Box,
   Text,
   Stack,
   Link,
   UnorderedList,
   ListItem,
   useColorModeValue,
+  Button,
+  IconButton,
 } from "@chakra-ui/react";
+import { HStack, Flex, Box, Divider } from "@chakra-ui/layout";
 import { MotionBox, MotionFlex } from "components/ui/motion";
 import Header from "components/layout/header";
 import NextLink from "next/link";
 import { useLinkColor } from "components/ui/theme";
+import siteConfig from "../../configs/site-config";
 
 const ANIMATION_DURATION = 0.5;
 const ORANGE = "#ff9400";
@@ -22,6 +24,7 @@ const Home: React.FC = () => {
 
   return (
     <Flex
+      position='relative'
       direction='column'
       justify='center'
       align='center'
@@ -126,6 +129,54 @@ const Home: React.FC = () => {
             </UnorderedList>
           </Stack>
         </Box>
+      </MotionBox>
+      <MotionBox
+        position='absolute'
+        bottom='70px'
+        w='100%'
+        opacity='0'
+        initial={{
+          translateY: 80,
+        }}
+        animate={{
+          translateY: 0,
+          opacity: 1,
+          transition: {
+            delay: ANIMATION_DURATION - 0.3,
+            duration: ANIMATION_DURATION,
+          },
+        }}
+      >
+        <HStack
+          w='100%'
+          spacing={6}
+          justifyContent='center'
+          wrap='wrap-reverse'
+        >
+          {siteConfig.author.accounts.map((sc, index) => (
+            <Button
+              isExternal
+              key={index}
+              as={Link}
+              href={sc.url}
+              title={sc.label}
+              aria-label={sc.label}
+              size='lg'
+              fontSize={["lg", "xl"]}
+              color={linkColor}
+              isRound={true}
+              variant={"outline"}
+            >
+              {sc.icon}
+
+              {sc.label === "Resume" && (
+                <Text fontSize={["sm", "md"]} ml='2'>
+                  Resume
+                </Text>
+              )}
+            </Button>
+          ))}
+        </HStack>
       </MotionBox>
     </Flex>
   );
