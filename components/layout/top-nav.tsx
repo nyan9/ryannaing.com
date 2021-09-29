@@ -25,14 +25,16 @@ import { AccentPicker } from "components/Accent";
 import { useLinkColor } from "components/ui/theme";
 
 const webLinks = [
-  { name: "Resume", href: "#" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
   { name: "Contact Me", href: "#contact" },
 ];
 
 const mobileLinks = [
-  { name: "Resume", href: "#" },
+  {
+    name: "Resume",
+    href: "https://drive.google.com/file/d/1pcALI5wprdKQV6fT2fqMy0UCtbrSdaze/view?usp=sharing",
+  },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
   { name: "Contact Me", href: "#contact" },

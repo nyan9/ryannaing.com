@@ -51,7 +51,7 @@ const ContactMe = () => {
           <Divider />
           <HStack w='100%' justifyContent='space-between'>
             {siteConfig.author.accounts.map((sc, index) => (
-              <Tooltip label={sc.label} aria-label={sc.label}>
+              <Tooltip key={index} label={sc.label} aria-label={sc.label}>
                 <IconButton
                   key={index}
                   as={Link}

@@ -164,7 +164,6 @@ const Home: React.FC = () => {
               size='lg'
               fontSize={["lg", "xl"]}
               color={linkColor}
-              isRound={true}
               variant={"outline"}
             >
               {sc.icon}
