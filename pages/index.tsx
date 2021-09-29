@@ -5,6 +5,7 @@ import PageLayout from "components/layout/pageLayout";
 import Skills from "components/skills/skills";
 import ContactMe from "components/contact-form";
 import Projects from "components/home-page/projects";
+import ScrollToTop from "components/scroll-to-top/scroll-to-top";
 
 export default function Index({ projects, skills }) {
   return (
@@ -15,6 +16,7 @@ export default function Index({ projects, skills }) {
       <Projects projects={projects} />
       <Skills skills={skills} />
       <ContactMe />
+      <ScrollToTop />
     </>
   );
 }

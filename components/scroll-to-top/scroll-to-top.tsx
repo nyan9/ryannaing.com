@@ -1,25 +1,34 @@
 import React, { useEffect, useState } from "react";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
 import { BsFileArrowUp } from "react-icons/bs";
-import "./ScrollToTop.css";
 
 const ScrollToTop = () => {
+  const route = useRouter();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () =>
-      window.pageYOffset > 500 ? setIsVisible(true) : setIsVisible(false);
+    const path = route.asPath;
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+    path !== "/#ryan" ? setIsVisible(true) : setIsVisible(false);
+  }, [route]);
 
-  return isVisible ? (
-    <div className='scroll-top'>
-      <a href='#top'>
-        <BsFileArrowUp fontSize='large' />
-      </a>
-    </div>
-  ) : null;
+  return (
+    isVisible && (
+      <div
+        className='scroll-top'
+        style={{
+          position: "absolute",
+          bottom: "30px",
+          right: "60px",
+        }}
+      >
+        <NextLink href={"#ryan"}>
+          <BsFileArrowUp />
+        </NextLink>
+      </div>
+    )
+  );
 };
 
 export default ScrollToTop;

@@ -15,10 +15,9 @@ const ContactMe = () => {
       id='contact'
       align='start'
       justify='center'
-      py='80px'
-      height={"max-content"}
+      height={"100vh"}
       mb={0}
-      sx={{ scrollSnapAlign: "end" }}
+      sx={{ scrollSnapAlign: "start" }}
     >
       <Header mt={0} mb={0}>
         Send me a message!
