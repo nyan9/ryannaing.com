@@ -15,6 +15,7 @@ import Header from "components/layout/header";
 import NextLink from "next/link";
 import { useLinkColor } from "components/ui/theme";
 import siteConfig from "../../configs/site-config";
+import styles from "./home.module.css";
 
 const ANIMATION_DURATION = 0.5;
 const ORANGE = "#ff9400";
@@ -22,9 +23,10 @@ const ORANGE = "#ff9400";
 const Home: React.FC = () => {
   const linkColor = useLinkColor();
 
+  console.log(linkColor);
   return (
     <Flex
-      id='welcome'
+      id='/'
       position='relative'
       direction='column'
       justify='center'
@@ -133,7 +135,7 @@ const Home: React.FC = () => {
       </MotionBox>
       <MotionBox
         position='absolute'
-        bottom='70px'
+        bottom='200px'
         w='100%'
         opacity='0'
         initial={{
@@ -178,6 +180,34 @@ const Home: React.FC = () => {
           ))}
         </HStack>
       </MotionBox>
+
+      <a className={styles.mouseIcon} href='#projects'>
+        <div
+          className={styles.mouse}
+          style={{ background: useColorModeValue("#CBD5E0", "#1e2533") }}
+        ></div>
+        <span
+          className={[styles.arrow, styles.arrow01].join(" ")}
+          style={{
+            borderBottomColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
+            borderRightColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
+          }}
+        ></span>
+        <span
+          className={[styles.arrow, styles.arrow02].join(" ")}
+          style={{
+            borderBottomColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
+            borderRightColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
+          }}
+        ></span>
+        <span
+          className={[styles.arrow, styles.arrow03].join(" ")}
+          style={{
+            borderBottomColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
+            borderRightColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
+          }}
+        ></span>
+      </a>
     </Flex>
   );
 };

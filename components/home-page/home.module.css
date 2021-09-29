@@ -1,0 +1,73 @@
+/*
+ * Mouse
+ */
+.mouseIcon {
+  position: absolute;
+  bottom: 28px;
+  cursor: pointer;
+}
+
+.mouse {
+  width: 20px;
+  height: 30px;
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 3px;
+}
+.mouse:after {
+  content: "";
+  background: #fff;
+  width: 6px;
+  height: 8px;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 20px;
+  animation: scrollAnim 1.5s infinite;
+}
+
+.arrow {
+  width: 8px;
+  height: 8px;
+  display: block;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  position: relative;
+  margin: 0 auto;
+  animation: arrowAnim 1.5s infinite;
+}
+.arrow.arrow-01 {
+  animation-delay: 0.2s;
+}
+.arrow.arrow-02 {
+  animation-delay: 0.3s;
+}
+.arrow.arrow-03 {
+  animation-delay: 0.4s;
+}
+
+/* Mouse wheel animation */
+@keyframes scrollAnim {
+  from {
+    top: 5px;
+  }
+  to {
+    top: 15px;
+    opacity: 0;
+  }
+}
+
+/* Arrows animation */
+@keyframes arrowAnim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
