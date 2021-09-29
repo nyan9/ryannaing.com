@@ -153,7 +153,7 @@ const Skills = ({ skills }) => {
                   initial='hidden'
                   animate='visible'
                 >
-                  <SimpleGrid columns={[2, 3, 5]} spacing={4} mt={8}>
+                  <SimpleGrid columns={[3, 3, 5]} spacing={4} mt={8}>
                     {skillsList.map((skill, index) => (
                       <SkillCard
                         key={index}
@@ -170,7 +170,7 @@ const Skills = ({ skills }) => {
                   initial='hidden'
                   animate='visible'
                 >
-                  <SimpleGrid columns={[4]} spacing={4} mt={8}>
+                  <SimpleGrid columns={[3]} spacing={4} mt={8}>
                     {skillsList.map((skill, index) => (
                       <SkillCard
                         key={index}
@@ -187,7 +187,7 @@ const Skills = ({ skills }) => {
                   initial='hidden'
                   animate='visible'
                 >
-                  <SimpleGrid columns={[4]} spacing={4} mt={8}>
+                  <SimpleGrid columns={[3]} spacing={4} mt={8}>
                     {skillsList.map((skill, index) => (
                       <SkillCard
                         key={index}
@@ -204,7 +204,7 @@ const Skills = ({ skills }) => {
                   initial='hidden'
                   animate='visible'
                 >
-                  <SimpleGrid columns={[4]} spacing={4} mt={8}>
+                  <SimpleGrid columns={[3]} spacing={4} mt={8}>
                     {skillsList.map((skill, index) => (
                       <SkillCard
                         key={index}
@@ -221,7 +221,7 @@ const Skills = ({ skills }) => {
                   initial='hidden'
                   animate='visible'
                 >
-                  <SimpleGrid columns={[4]} spacing={4} mt={8}>
+                  <SimpleGrid columns={[3]} spacing={4} mt={8}>
                     {skillsList.map((skill, index) => (
                       <SkillCard
                         key={index}
