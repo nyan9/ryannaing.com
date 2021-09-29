@@ -1,5 +1,5 @@
 import { HStack, Flex, VStack, Box, Divider } from "@chakra-ui/layout";
-import { IconButton, Link } from "@chakra-ui/react";
+import { IconButton, Link, Tooltip } from "@chakra-ui/react";
 import ContactForm from "./form";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
@@ -51,19 +51,21 @@ const ContactMe = () => {
           <Divider />
           <HStack w='100%' justifyContent='space-between'>
             {siteConfig.author.accounts.map((sc, index) => (
-              <IconButton
-                key={index}
-                as={Link}
-                isExternal
-                href={sc.url}
-                title={sc.label}
-                aria-label={sc.label}
-                size='lg'
-                color={linkColor}
-                icon={sc.icon}
-                isRound={true}
-                variant={"outline"}
-              />
+              <Tooltip label={sc.label} aria-label={sc.label}>
+                <IconButton
+                  key={index}
+                  as={Link}
+                  isExternal
+                  href={sc.url}
+                  title={sc.label}
+                  aria-label={sc.label}
+                  size='lg'
+                  color={linkColor}
+                  icon={sc.icon}
+                  isRound={true}
+                  variant={"outline"}
+                />
+              </Tooltip>
             ))}
           </HStack>
         </VStack>

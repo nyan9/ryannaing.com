@@ -15,6 +15,7 @@ import {
   PopoverBody,
   PopoverArrow,
   PopoverCloseButton,
+  Tooltip,
 } from "@chakra-ui/react";
 import { MotionBox } from "../ui/motion";
 import { item } from "../ui/page-transitions";
@@ -46,34 +47,36 @@ const ContactCard = ({ logo, info, color, type }) => {
         {type === "email" ? (
           <Popover>
             <PopoverTrigger>
-              <VStack
-                p={4}
-                bg={useColorModeValue("white", "gray.800")}
-                rounded='xl'
-                borderWidth='1px'
-                borderColor={useColorModeValue("gray.100", "gray.700")}
-                w='100%'
-                textAlign='center'
-                align='center'
-                spacing={2}
-                cursor='pointer'
-                _hover={{ shadow: "md" }}
-              >
-                <Box p={1} position='relative' color={color}>
-                  {logo}
-                </Box>
+              <Tooltip label='Open your mail' aria-label='Open your mail'>
+                <VStack
+                  p={4}
+                  bg={useColorModeValue("white", "gray.800")}
+                  rounded='xl'
+                  borderWidth='1px'
+                  borderColor={useColorModeValue("gray.100", "gray.700")}
+                  w='100%'
+                  textAlign='center'
+                  align='center'
+                  spacing={2}
+                  cursor='pointer'
+                  _hover={{ shadow: "md" }}
+                >
+                  <Box p={1} position='relative' color={color}>
+                    {logo}
+                  </Box>
 
-                <VStack spacing={0} align='center' flexGrow={1}>
-                  <Text
-                    fontWeight='bold'
-                    fontSize='md'
-                    noOfLines={1}
-                    color={color}
-                  >
-                    {info}
-                  </Text>
+                  <VStack spacing={0} align='center' flexGrow={1}>
+                    <Text
+                      fontWeight='bold'
+                      fontSize='md'
+                      noOfLines={1}
+                      color={color}
+                    >
+                      {info}
+                    </Text>
+                  </VStack>
                 </VStack>
-              </VStack>
+              </Tooltip>
             </PopoverTrigger>
             <Portal>
               <PopoverContent>
@@ -96,34 +99,36 @@ const ContactCard = ({ logo, info, color, type }) => {
         ) : (
           <Popover>
             <PopoverTrigger>
-              <VStack
-                p={4}
-                bg={useColorModeValue("white", "gray.800")}
-                rounded='xl'
-                borderWidth='1px'
-                borderColor={useColorModeValue("gray.100", "gray.700")}
-                w='100%'
-                textAlign='center'
-                align='center'
-                spacing={2}
-                cursor='pointer'
-                _hover={{ shadow: "md" }}
-              >
-                <Box p={1} position='relative' color={color}>
-                  {logo}
-                </Box>
+              <Tooltip label='Copy my number' aria-label='Copy my number'>
+                <VStack
+                  p={4}
+                  bg={useColorModeValue("white", "gray.800")}
+                  rounded='xl'
+                  borderWidth='1px'
+                  borderColor={useColorModeValue("gray.100", "gray.700")}
+                  w='100%'
+                  textAlign='center'
+                  align='center'
+                  spacing={2}
+                  cursor='pointer'
+                  _hover={{ shadow: "md" }}
+                >
+                  <Box p={1} position='relative' color={color}>
+                    {logo}
+                  </Box>
 
-                <VStack spacing={0} align='center' flexGrow={1}>
-                  <Text
-                    fontWeight='bold'
-                    fontSize='md'
-                    noOfLines={1}
-                    color={color}
-                  >
-                    {info}
-                  </Text>
+                  <VStack spacing={0} align='center' flexGrow={1}>
+                    <Text
+                      fontWeight='bold'
+                      fontSize='md'
+                      noOfLines={1}
+                      color={color}
+                    >
+                      {info}
+                    </Text>
+                  </VStack>
                 </VStack>
-              </VStack>
+              </Tooltip>
             </PopoverTrigger>
             <Portal>
               <PopoverContent>

@@ -5,6 +5,7 @@ import {
   Text,
   useColorModeValue,
   Link,
+  Tooltip,
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import LazyImage from "components/ui/lazy-image";
@@ -58,29 +59,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         >
           <VStack align='start' width='100%'>
             <HStack width='inherit' spacing={4}>
-              <Text
-                as={Link}
-                href={link}
-                fontWeight='bold'
-                fontSize='md'
-                noOfLines={1}
-                color={linkColor}
-                mr='auto'
-                cursor='pointer'
-                isExternal
-              >
-                {title}
-              </Text>
+              <Tooltip label={link} aria-label='Link to live site'>
+                <Text
+                  as={Link}
+                  href={link}
+                  fontWeight='bold'
+                  fontSize='md'
+                  noOfLines={1}
+                  color={linkColor}
+                  mr='auto'
+                  cursor='pointer'
+                  isExternal
+                >
+                  {title}
+                </Text>
+              </Tooltip>
 
-              <Link
-                href={link}
-                color={linkColor}
-                cursor='pointer'
-                _hover={{ transform: "scale(1.5)" }}
-                isExternal
-              >
-                <RiShareBoxLine />
-              </Link>
+              <Tooltip label={link} aria-label='Link to live site'>
+                <Link
+                  href={link}
+                  color={linkColor}
+                  cursor='pointer'
+                  _hover={{ transform: "scale(1.5)" }}
+                  isExternal
+                >
+                  <RiShareBoxLine />
+                </Link>
+              </Tooltip>
 
               <Link
                 href={github}
