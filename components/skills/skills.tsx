@@ -12,6 +12,7 @@ import {
   TabPanel,
   useColorModeValue,
   SimpleGrid,
+  Box,
 } from "@chakra-ui/react";
 
 import PageLayout from "../layout/pageLayout";
@@ -44,13 +45,11 @@ const Skills = ({ skills }) => {
   return (
     <PageSlideFade>
       <VStack
-        id='skills'
         align='start'
         justify='center'
-        py='100px'
-        min-height={"100vh"}
-        // height={"max-content"}
-        // sx={{ scrollSnapAlign: "start" }}
+        id='skills'
+        pt={["100px", "100px", "0"]}
+        minHeight={"100vh"}
       >
         <Section>
           <Header mt={0} mb={0}>
