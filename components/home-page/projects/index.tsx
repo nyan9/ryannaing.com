@@ -18,8 +18,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       justify='center'
       spacing={8}
       py='100px'
-      height={"max-content"}
-      sx={{ scrollSnapAlign: "start end" }}
+      min-height={"100vh"}
+      // height={"max-content"}
+      // sx={{ scrollSnapAlign: "start end" }}
     >
       <Header underlineColor={ORANGE} mb={0}>
         Projects

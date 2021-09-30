@@ -17,8 +17,9 @@ const ContactMe = () => {
       align='start'
       justify='center'
       pt={["200px", "200px", "0"]}
-      height={["max-content", "max-content", "100vh"]}
-      sx={{ scrollSnapAlign: "start" }}
+      min-height={"100vh"}
+      // height={["max-content", "max-content", "100vh"]}
+      // sx={{ scrollSnapAlign: "start" }}
     >
       <Header mt={0} mb={0}>
         Send me a message!
@@ -55,7 +56,7 @@ const ContactMe = () => {
             w='100%'
             pb='20'
             justifyContent='space-between'
-            sx={{ scrollSnapAlign: "end" }}
+            // sx={{ scrollSnapAlign: "end" }}
           >
             {siteConfig.author.accounts.map((sc, index) => (
               <Tooltip key={index} label={sc.label} aria-label={sc.label}>

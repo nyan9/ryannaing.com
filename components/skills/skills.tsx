@@ -48,8 +48,9 @@ const Skills = ({ skills }) => {
         align='start'
         justify='center'
         py='100px'
-        height={"max-content"}
-        sx={{ scrollSnapAlign: "start" }}
+        min-height={"100vh"}
+        // height={"max-content"}
+        // sx={{ scrollSnapAlign: "start" }}
       >
         <Section>
           <Header mt={0} mb={0}>

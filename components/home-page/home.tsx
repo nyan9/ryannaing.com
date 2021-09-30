@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   IconButton,
   Button,
+  Image,
 } from "@chakra-ui/react";
 import { HStack, Flex, Box } from "@chakra-ui/layout";
 import { MotionBox, MotionFlex } from "components/ui/motion";
@@ -31,8 +32,8 @@ const Home: React.FC = () => {
       direction='column'
       justify='center'
       align='center'
-      h='100vh'
-      sx={{ scrollSnapAlign: "center" }}
+      minHeight='100vh'
+      sx={{ scrollSnapAlign: "start" }}
     >
       <Flex direction={["column", "column", "row"]}>
         <MotionBox
@@ -49,7 +50,7 @@ const Home: React.FC = () => {
             },
           }}
           m='auto'
-          mb={[8, 8, "auto"]}
+          mb={[1, 2, "auto"]}
         >
           <Avatar
             bg={linkColor}
@@ -60,7 +61,7 @@ const Home: React.FC = () => {
         <MotionFlex
           ml={["auto", "auto", 16]}
           m={["auto", "initial"]}
-          w={["90%", "85%", "80%"]}
+          w={["100%", "90%", "80%"]}
           maxW='800px'
           opacity='0'
           justify='center'
@@ -92,17 +93,41 @@ const Home: React.FC = () => {
             </Box>{" "}
             and I&apos;m a{" "}
             <Box as='span' whiteSpace='nowrap'>
-              Full Stack Software Engineer
+              Full Stack Software Engineer.
             </Box>
           </Box>
           <Box
             as='h2'
-            fontSize={["md", "lg", "2xl"]}
+            fontSize={["sm", "md", "lg"]}
             fontWeight='400'
-            mt={5}
+            mt={[3, 5]}
             textAlign='left'
           >
-            I like all things code.
+            I enjoy solving problems, debugging, and writing clean reuseable
+            code. I completed{" "}
+            <Box
+              as='strong'
+              fontSize={["sm", "md", "lg"]}
+              color='red.500'
+              fontWeight='600'
+              whiteSpace='nowrap'
+            >
+              App Academy
+            </Box>{" "}
+            where I quickly absorbed the ins and outs of full-stack software
+            development, and breathed code for over 80 hours a week. I'm always
+            looking to learn new technologies, design patterns, or methods to
+            optimize my code quality and efficiency.
+          </Box>
+          <Box
+            as='h2'
+            fontSize={["sm", "md", "lg"]}
+            fontWeight='400'
+            mt={[3, 5]}
+            textAlign='left'
+          >
+            When I'm not coding, I'm usually lifting weights, hiking, building
+            PCs, watching stand up comedy, or watching combat sports.
           </Box>
         </MotionFlex>
       </Flex>
@@ -121,11 +146,12 @@ const Home: React.FC = () => {
           },
         }}
       >
-        <Box position='relative' mt={10}>
+        <Box mt={[5, 10, 10]}>
           <Stack
-            mb={10}
+            mb={[5, 5, 10]}
             mx={[0, 0, 10]}
-            padding={4}
+            py={[2, 2, 4]}
+            px={4}
             align='start'
             borderLeft='4px solid'
             borderColor={"#53c8c4"}
@@ -133,22 +159,26 @@ const Home: React.FC = () => {
             _hover={{ shadow: "lg" }}
             backgroundColor={useColorModeValue("gray.100", "#1e2533")}
             rounded='sm'
-            fontSize='md'
           >
-            <Text textAlign='center' color='#53c8c4' fontWeight='bold'>
+            <Text
+              textAlign='center'
+              fontSize={["md", "md", "lg"]}
+              color='#53c8c4'
+              fontWeight='bold'
+            >
               Highlights
             </Text>
             <UnorderedList textAlign='left' paddingLeft={5} m={0}>
-              <ListItem>
+              <ListItem mt={[0, 0, 1]}>
                 <NextLink href={"#skills"} passHref>
-                  <Link color={linkColor}>Tech Stack</Link>
+                  <Link fontSize={["sm", "sm", "md"]} color={linkColor}>
+                    Tech Stack
+                  </Link>
                 </NextLink>
               </ListItem>
             </UnorderedList>
           </Stack>
           <MotionBox
-            position='absolute'
-            bottom='-75px'
             w='100%'
             opacity='0'
             initial={{
@@ -167,7 +197,7 @@ const Home: React.FC = () => {
               w='100%'
               spacing={[2, 4]}
               justifyContent='center'
-              wrap='wrap'
+              wrap='wrap-reverse'
             >
               {siteConfig.author.accounts.map((sc, index) =>
                 sc.label === "Resume" ? (
@@ -177,17 +207,14 @@ const Home: React.FC = () => {
                     href={sc.url}
                     title={sc.label}
                     aria-label={sc.label}
-                    size='lg'
-                    fontSize={["lg", "2xl"]}
+                    size={useBreakpointValue({ base: "md", md: "lg" })}
+                    fontSize={["lg", "xl", "xl"]}
                     color={linkColor}
                     variant={"outline"}
+                    leftIcon={sc.icon}
                     isExternal
                   >
-                    {sc.icon}
-
-                    <Text fontSize={"md"} ml='2'>
-                      Resume
-                    </Text>
+                    Resume
                   </Button>
                 ) : (
                   <IconButton
@@ -195,7 +222,7 @@ const Home: React.FC = () => {
                     as={Link}
                     href={sc.url}
                     size='xs'
-                    fontSize='2xl'
+                    fontSize={["lg", "xl"]}
                     variant='ghost'
                     aria-label={sc.label}
                     isExternal
@@ -213,27 +240,15 @@ const Home: React.FC = () => {
         <div className={styles.mouseIcon}>
           <div
             className={styles.mouse}
-            style={{ background: useColorModeValue("#CBD5E0", "#25324c") }}
+            style={{
+              background: useColorModeValue("#CBD5E0", "#25324c"),
+            }}
           ></div>
           <span
             className={[styles.arrow, styles.arrow01].join(" ")}
             style={{
-              borderBottomColor: useColorModeValue("#CBD5E0", "#25324c"),
-              borderRightColor: useColorModeValue("#CBD5E0", "#25324c"),
-            }}
-          ></span>
-          <span
-            className={[styles.arrow, styles.arrow02].join(" ")}
-            style={{
-              borderBottomColor: useColorModeValue("#CBD5E0", "#25324c"),
-              borderRightColor: useColorModeValue("#CBD5E0", "#25324c"),
-            }}
-          ></span>
-          <span
-            className={[styles.arrow, styles.arrow03].join(" ")}
-            style={{
-              borderBottomColor: useColorModeValue("#CBD5E0", "#25324c"),
-              borderRightColor: useColorModeValue("#CBD5E0", "#25324c"),
+              borderBottomColor: useColorModeValue("#25324c", "#CBD5E0"),
+              borderRightColor: useColorModeValue("#25324c", "#CBD5E0"),
             }}
           ></span>
         </div>
