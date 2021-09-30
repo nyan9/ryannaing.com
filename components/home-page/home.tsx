@@ -172,16 +172,16 @@ const Home: React.FC = () => {
               {siteConfig.author.accounts.map((sc, index) =>
                 sc.label === "Resume" ? (
                   <Button
-                    isExternal
                     key={index}
                     as={Link}
                     href={sc.url}
                     title={sc.label}
                     aria-label={sc.label}
                     size='lg'
-                    fontSize={["lg", "xl"]}
+                    fontSize={["lg", "2xl"]}
                     color={linkColor}
                     variant={"outline"}
+                    isExternal
                   >
                     {sc.icon}
 
@@ -191,11 +191,14 @@ const Home: React.FC = () => {
                   </Button>
                 ) : (
                   <IconButton
+                    key={index}
+                    as={Link}
+                    href={sc.url}
                     size='xs'
                     fontSize='2xl'
                     variant='ghost'
                     aria-label={sc.label}
-                    isRound={true}
+                    isExternal
                   >
                     {sc.icon}
                   </IconButton>
