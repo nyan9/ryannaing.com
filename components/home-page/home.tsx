@@ -15,6 +15,7 @@ import NextLink from "next/link";
 import { useLinkColor } from "components/ui/theme";
 import siteConfig from "../../configs/site-config";
 import styles from "./home.module.css";
+import { useBreakpointValue } from "@chakra-ui/media-query";
 
 const ANIMATION_DURATION = 0.5;
 const ORANGE = "#ff9400";
@@ -47,9 +48,13 @@ const Home: React.FC = () => {
             },
           }}
           m='auto'
-          mb={[16, 16, "auto"]}
+          mb={[8, 8, "auto"]}
         >
-          <Avatar bg={linkColor} size={"2xl"} src='/assets/images/hi.png' />
+          <Avatar
+            bg={linkColor}
+            size={useBreakpointValue({ base: "xl", md: "2xl" })}
+            src='/assets/images/hi.png'
+          />
         </MotionBox>
         <MotionFlex
           ml={["auto", "auto", 16]}
@@ -74,7 +79,12 @@ const Home: React.FC = () => {
           <Header underlineColor={ORANGE} emoji='👋' mt={0}>
             Hello!
           </Header>
-          <Box as='h2' fontSize='2xl' fontWeight='400' textAlign='left'>
+          <Box
+            as='h2'
+            fontSize={["md", "lg", "2xl"]}
+            fontWeight='400'
+            textAlign='left'
+          >
             My name is{" "}
             <Box as='strong' fontWeight='600'>
               Ryan
@@ -84,7 +94,13 @@ const Home: React.FC = () => {
               Full Stack Software Engineer
             </Box>
           </Box>
-          <Box as='h2' fontSize='2xl' fontWeight='400' mt={5} textAlign='left'>
+          <Box
+            as='h2'
+            fontSize={["md", "lg", "2xl"]}
+            fontWeight='400'
+            mt={5}
+            textAlign='left'
+          >
             I like all things code.
           </Box>
         </MotionFlex>
@@ -133,7 +149,7 @@ const Home: React.FC = () => {
       </MotionBox>
       <MotionBox
         position='absolute'
-        bottom='200px'
+        bottom='125px'
         w='100%'
         opacity='0'
         initial={{
@@ -150,7 +166,7 @@ const Home: React.FC = () => {
       >
         <HStack
           w='100%'
-          spacing={6}
+          spacing={[2, 6]}
           justifyContent='center'
           wrap='wrap-reverse'
         >
@@ -170,7 +186,7 @@ const Home: React.FC = () => {
               {sc.icon}
 
               {sc.label === "Resume" && (
-                <Text fontSize={["sm", "md"]} ml='2'>
+                <Text fontSize={"md"} ml='2'>
                   Resume
                 </Text>
               )}
