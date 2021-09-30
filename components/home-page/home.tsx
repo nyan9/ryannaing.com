@@ -6,6 +6,7 @@ import {
   UnorderedList,
   ListItem,
   useColorModeValue,
+  IconButton,
   Button,
 } from "@chakra-ui/react";
 import { HStack, Flex, Box } from "@chakra-ui/layout";
@@ -120,7 +121,7 @@ const Home: React.FC = () => {
           },
         }}
       >
-        <Box mt={10}>
+        <Box position='relative' mt={10}>
           <Stack
             mb={10}
             mx={[0, 0, 10]}
@@ -145,54 +146,64 @@ const Home: React.FC = () => {
               </ListItem>
             </UnorderedList>
           </Stack>
-        </Box>
-      </MotionBox>
-      <MotionBox
-        position='absolute'
-        bottom='125px'
-        w='100%'
-        opacity='0'
-        initial={{
-          translateY: 80,
-        }}
-        animate={{
-          translateY: 0,
-          opacity: 1,
-          transition: {
-            delay: ANIMATION_DURATION - 0.3,
-            duration: ANIMATION_DURATION,
-          },
-        }}
-      >
-        <HStack
-          w='100%'
-          spacing={[2, 6]}
-          justifyContent='center'
-          wrap='wrap-reverse'
-        >
-          {siteConfig.author.accounts.map((sc, index) => (
-            <Button
-              isExternal
-              key={index}
-              as={Link}
-              href={sc.url}
-              title={sc.label}
-              aria-label={sc.label}
-              size='lg'
-              fontSize={["lg", "xl"]}
-              color={linkColor}
-              variant={"outline"}
+          <MotionBox
+            position='absolute'
+            bottom='-75px'
+            w='100%'
+            opacity='0'
+            initial={{
+              translateY: 80,
+            }}
+            animate={{
+              translateY: 0,
+              opacity: 1,
+              transition: {
+                delay: ANIMATION_DURATION - 0.3,
+                duration: ANIMATION_DURATION,
+              },
+            }}
+          >
+            <HStack
+              w='100%'
+              spacing={[2, 4]}
+              justifyContent='center'
+              wrap='wrap'
             >
-              {sc.icon}
+              {siteConfig.author.accounts.map((sc, index) =>
+                sc.label === "Resume" ? (
+                  <Button
+                    isExternal
+                    key={index}
+                    as={Link}
+                    href={sc.url}
+                    title={sc.label}
+                    aria-label={sc.label}
+                    size='lg'
+                    fontSize={["lg", "xl"]}
+                    color={linkColor}
+                    variant={"outline"}
+                  >
+                    {sc.icon}
 
-              {sc.label === "Resume" && (
-                <Text fontSize={"md"} ml='2'>
-                  Resume
-                </Text>
+                    <Text fontSize={"md"} ml='2'>
+                      Resume
+                    </Text>
+                  </Button>
+                ) : (
+                  <IconButton
+                    size='xs'
+                    fontSize='2xl'
+                    variant='ghost'
+                    aria-label={sc.label}
+                    isRound={true}
+                  >
+                    {sc.icon}
+                  </IconButton>
+                )
               )}
-            </Button>
-          ))}
-        </HStack>
+            </HStack>
+          </MotionBox>
+        </Box>
       </MotionBox>
 
       <NextLink href={"#projects"}>
