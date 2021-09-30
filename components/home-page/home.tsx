@@ -7,9 +7,8 @@ import {
   ListItem,
   useColorModeValue,
   Button,
-  IconButton,
 } from "@chakra-ui/react";
-import { HStack, Flex, Box, Divider } from "@chakra-ui/layout";
+import { HStack, Flex, Box } from "@chakra-ui/layout";
 import { MotionBox, MotionFlex } from "components/ui/motion";
 import Header from "components/layout/header";
 import NextLink from "next/link";
@@ -25,7 +24,7 @@ const Home: React.FC = () => {
 
   return (
     <Flex
-      id='ryan'
+      id='about'
       position='relative'
       direction='column'
       justify='center'
@@ -184,27 +183,27 @@ const Home: React.FC = () => {
         <div className={styles.mouseIcon}>
           <div
             className={styles.mouse}
-            style={{ background: useColorModeValue("#CBD5E0", "#1e2533") }}
+            style={{ background: useColorModeValue("#CBD5E0", "#25324c") }}
           ></div>
           <span
             className={[styles.arrow, styles.arrow01].join(" ")}
             style={{
-              borderBottomColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
-              borderRightColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
+              borderBottomColor: useColorModeValue("#CBD5E0", "#25324c"),
+              borderRightColor: useColorModeValue("#CBD5E0", "#25324c"),
             }}
           ></span>
           <span
             className={[styles.arrow, styles.arrow02].join(" ")}
             style={{
-              borderBottomColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
-              borderRightColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
+              borderBottomColor: useColorModeValue("#CBD5E0", "#25324c"),
+              borderRightColor: useColorModeValue("#CBD5E0", "#25324c"),
             }}
           ></span>
           <span
             className={[styles.arrow, styles.arrow03].join(" ")}
             style={{
-              borderBottomColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
-              borderRightColor: useColorModeValue("#CBD5E0", "#2b3b5c"),
+              borderBottomColor: useColorModeValue("#CBD5E0", "#25324c"),
+              borderRightColor: useColorModeValue("#CBD5E0", "#25324c"),
             }}
           ></span>
         </div>

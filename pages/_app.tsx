@@ -6,8 +6,25 @@ import { AnimatePresence } from "framer-motion";
 import { theme } from "components/ui/theme";
 import { AccentGlobal } from "components/Accent";
 import { FontsGlobal } from "components/ui/theme/fonts";
+import { useEffect } from "react";
+import * as gtag from "lib/gtag";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <ChakraProvider theme={theme} resetCSS={true}>
       <FontsGlobal />
@@ -19,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           initial={false}
           onExitComplete={() => window.scrollTo(0, 0)}
         >
-          <Box>
+          <Box key={router.route}>
             <Component {...pageProps} />
           </Box>
         </AnimatePresence>

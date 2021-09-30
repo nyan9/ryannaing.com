@@ -6,10 +6,6 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <meta charSet='utf-8' />
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
-          <meta name='theme-color' content='#00b5d8' />
-
           <link rel='icon' href='/assets/images/favicon.ico' />
           <link rel='apple-touch-icon' href='/assets/images/logo.png' />
           <link
@@ -18,14 +14,18 @@ class MyDocument extends Document {
           />
           <link rel='manifest' href='/manifest.json' />
 
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=`} />
+          {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          ></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '', {
+            gtag('config', '${GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });
           `,

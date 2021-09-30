@@ -5,18 +5,17 @@ import PageLayout from "components/layout/pageLayout";
 import Skills from "components/skills/skills";
 import ContactMe from "components/contact-form";
 import Projects from "components/home-page/projects";
-import ScrollToTop from "components/scroll-to-top/scroll-to-top";
+import React from "react";
 
 export default function Index({ projects, skills }) {
   return (
     <>
       <PageLayout title='Ryan Naing - Software Engineer'>
         <Home />
+        <Projects projects={projects} />
+        <Skills skills={skills} />
+        <ContactMe />
       </PageLayout>
-      <Projects projects={projects} />
-      <Skills skills={skills} />
-      <ContactMe />
-      <ScrollToTop />
     </>
   );
 }

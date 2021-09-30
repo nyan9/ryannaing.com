@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
   IconButton,
@@ -48,7 +47,7 @@ const NavLink = (props: NavLinkProps) => {
   };
 
   return (
-    <NextLink href={props.href} passHref>
+    <NextLink href={props.href} passHref replace>
       <Link
         px={2}
         py={1}
@@ -57,8 +56,6 @@ const NavLink = (props: NavLinkProps) => {
           textDecoration: "none",
           bg: link.bg,
         }}
-        // bg={router.asPath.includes(props.href) ? link.bg : "transparent"}
-        // color={router.asPath.includes(props.href) ? link.color : "inherit"}
         onClick={() => props.onClose()}
       >
         {props.name}
@@ -97,15 +94,20 @@ export default function TopNav() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>
-              <Avatar
-                bg={linkColor}
-                as={Link}
-                href={"#welcome"}
-                size={"sm"}
-                src='/assets/images/hi.png'
-              />
-            </Box>
+            <NextLink href='#about' passHref replace>
+              <Link
+                as='h2'
+                fontSize='2xl'
+                fontWeight='black'
+                textAlign='left'
+                color={linkColor}
+                title='Back to top'
+                cursor='pointer'
+                position='relative'
+              >
+                RN.
+              </Link>
+            </NextLink>
             <HStack
               as={"nav"}
               spacing={4}
