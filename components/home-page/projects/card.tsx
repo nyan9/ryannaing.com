@@ -6,6 +6,7 @@ import {
   useColorModeValue,
   Link,
   Tooltip,
+  Box,
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import LazyImage from "components/ui/lazy-image";
@@ -37,6 +38,35 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <motion.div layout>
+      <HStack width='inherit' align='center' ml={2} mb={2} spacing={4}>
+        <Text
+          as={Link}
+          href={link}
+          fontWeight='bold'
+          fontSize={["lg", "xl"]}
+          noOfLines={1}
+          color={linkColor}
+          cursor='pointer'
+          _hover={{ transform: "scale(1.1)" }}
+          isExternal
+        >
+          {title}
+          <Box as='span' ml={1} fontSize='sm' display='inline-block'>
+            <RiShareBoxLine />
+          </Box>
+        </Text>
+
+        <Link
+          href={github}
+          color={linkColor}
+          cursor='pointer'
+          fontSize='2xl'
+          _hover={{ transform: "scale(1.2)" }}
+          isExternal
+        >
+          <RiGithubLine />
+        </Link>
+      </HStack>
       <HStack
         p={4}
         bg={useColorModeValue("white", "gray.800")}
@@ -58,45 +88,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           width={["100%", "100", "100%", "40%"]}
         >
           <VStack align='start' width='100%'>
-            <HStack width='inherit' spacing={4}>
-              <Tooltip label={link} aria-label='Link to live site'>
-                <Text
-                  as={Link}
-                  href={link}
-                  fontWeight='bold'
-                  fontSize='md'
-                  noOfLines={1}
-                  color={linkColor}
-                  mr='auto'
-                  cursor='pointer'
-                  isExternal
-                >
-                  {title}
-                </Text>
-              </Tooltip>
-
-              <Tooltip label={link} aria-label='Link to live site'>
-                <Link
-                  href={link}
-                  color={linkColor}
-                  cursor='pointer'
-                  _hover={{ transform: "scale(1.5)" }}
-                  isExternal
-                >
-                  <RiShareBoxLine />
-                </Link>
-              </Tooltip>
-
-              <Link
-                href={github}
-                color={linkColor}
-                cursor='pointer'
-                _hover={{ transform: "scale(1.5)" }}
-                isExternal
-              >
-                <RiGithubLine />
-              </Link>
-            </HStack>
             <HStack spacing='1'>
               {technologies.map((tech, index) => (
                 <Tag
