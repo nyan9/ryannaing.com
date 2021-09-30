@@ -68,7 +68,7 @@ const SkillCard = ({ name, image }) => {
                 fontWeight='bold'
                 fontSize='md'
                 noOfLines={1}
-                color={linkColor}
+                color={data.vibrant}
               >
                 {name}
               </Text>

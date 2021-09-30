@@ -7,6 +7,7 @@ import Header from "components/layout/header";
 import ContactCard from "./contact-card";
 import siteConfig from "../../configs/site-config";
 import { useLinkColor } from "components/ui/theme";
+import Footer from "components/layout/footer";
 
 const ContactMe = () => {
   const linkColor = useLinkColor();
@@ -15,8 +16,8 @@ const ContactMe = () => {
       id='contact'
       align='start'
       justify='center'
-      height={"100vh"}
-      mb={0}
+      pt={["200px", "200px", "0"]}
+      height={["max-content", "max-content", "100vh"]}
       sx={{ scrollSnapAlign: "start" }}
     >
       <Header mt={0} mb={0}>
@@ -50,7 +51,12 @@ const ContactMe = () => {
 
           <Divider />
 
-          <HStack w='100%' pb='12' justifyContent='space-between'>
+          <HStack
+            w='100%'
+            pb='20'
+            justifyContent='space-between'
+            sx={{ scrollSnapAlign: "end" }}
+          >
             {siteConfig.author.accounts.map((sc, index) => (
               <Tooltip key={index} label={sc.label} aria-label={sc.label}>
                 <IconButton

@@ -11,7 +11,6 @@ const Footer = () => {
   return (
     <Stack
       as='footer'
-      isInline
       spacing={[1, 2]}
       p={4}
       justifyContent='center'
@@ -19,6 +18,7 @@ const Footer = () => {
       w={["100%", "85%", "80%"]}
       maxW={800}
       mx='auto'
+      overflowY='hidden'
     >
       <Flex justifyContent='start' alignItems='center' w='100%'>
         <Text
