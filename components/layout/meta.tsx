@@ -28,7 +28,8 @@ const Meta = ({ title, keywords, description, image }: Props): JSX.Element => {
 
 Meta.defaultProps = {
   title: "Ryan Naing - Software Engineer",
-  keywords: "web development, programming, web design",
+  keywords:
+    "web developer, programmer, software developer, software engineer, full stack, web design",
   description: "Software Engineer. Lover of all technologies.",
 };
 
