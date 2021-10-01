@@ -20,7 +20,6 @@ const Footer = () => {
       mx='auto'
       mt={300}
       overflowY='hidden'
-      sx={{ scrollSnapAlign: "end" }}
     >
       <Flex justifyContent='start' alignItems='center' w='100%'>
         <Text

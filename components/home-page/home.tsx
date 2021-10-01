@@ -236,22 +236,24 @@ const Home: React.FC = () => {
         </Box>
       </MotionBox>
 
-      <NextLink href={"#projects"}>
-        <div className={styles.mouseIcon}>
-          <div
-            className={styles.mouse}
-            style={{
-              background: useColorModeValue("#CBD5E0", "#25324c"),
-            }}
-          ></div>
-          <span
-            className={[styles.arrow, styles.arrow01].join(" ")}
-            style={{
-              borderBottomColor: useColorModeValue("#25324c", "#CBD5E0"),
-              borderRightColor: useColorModeValue("#25324c", "#CBD5E0"),
-            }}
-          ></span>
-        </div>
+      <NextLink href={"#projects"} passHref replace>
+        <Link>
+          <div className={styles.mouseIcon}>
+            <div
+              className={styles.mouse}
+              style={{
+                background: useColorModeValue("#CBD5E0", "#25324c"),
+              }}
+            ></div>
+            <span
+              className={[styles.arrow, styles.arrow01].join(" ")}
+              style={{
+                borderBottomColor: useColorModeValue("#25324c", "#CBD5E0"),
+                borderRightColor: useColorModeValue("#25324c", "#CBD5E0"),
+              }}
+            ></span>
+          </div>
+        </Link>
       </NextLink>
     </Flex>
   );
