@@ -19,7 +19,7 @@ const Meta = ({ title, keywords, description, image }: Props): JSX.Element => {
       <meta property='og:title' content={title} />
       <meta
         property='og:image'
-        content={image ? image : "/assets/images/logo.png"}
+        content={image ? image : "/assets/images/logos/logo.png"}
       />
       <title>{title}</title>
     </Head>

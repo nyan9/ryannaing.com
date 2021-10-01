@@ -1,24 +1,24 @@
 {
   "short_name": "Ryan Naing",
-  "name": "Ryan Naing Portfolio",
+  "name": "Ryan Naing: Portfolio",
   "icons": [
     {
       "src": "/assets/images/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "16x16 32x32 64x64",
       "type": "image/x-icon"
     },
     {
-      "src": "/assets/images/logo.png",
+      "src": "/assets/images/favicon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/images/logo512.png",
+      "src": "/assets/images/logos/logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/#contact",
   "display": "standalone",
   "theme_color": "#fff",
   "background_color": "#cbd5e0"

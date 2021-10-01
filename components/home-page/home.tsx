@@ -55,7 +55,7 @@ const Home: React.FC = () => {
           <Avatar
             bg={linkColor}
             size={useBreakpointValue({ base: "xl", md: "2xl" })}
-            src='/assets/images/hi.png'
+            src='/assets/images/logos/avatar.png'
           />
         </MotionBox>
         <MotionFlex
@@ -104,20 +104,11 @@ const Home: React.FC = () => {
             textAlign='left'
           >
             I enjoy solving problems, debugging, and writing clean reuseable
-            code. I completed{" "}
-            <Box
-              as='strong'
-              fontSize={["sm", "lg", "xl"]}
-              color='red.500'
-              fontWeight='600'
-              whiteSpace='nowrap'
-            >
-              App Academy
-            </Box>{" "}
-            where I quickly absorbed the ins and outs of full-stack software
-            development, and breathed code for over 80 hours a week. I&apos;m
-            always looking to learn new technologies, design patterns, or
-            methods to optimize my code quality and efficiency.
+            code. I completed App Academy where I quickly absorbed the ins and
+            outs of full-stack software development, and breathed code for over
+            80 hours a week. I&apos;m always looking to learn new technologies,
+            design patterns, or methods to optimize my code quality and
+            efficiency.
           </Box>
           <Box
             as='h2'
