@@ -30,20 +30,38 @@ export function useTagStyles(colorScheme: ColorKeys = "accent") {
 
 export const getTagColor = (type) => {
   type = type.toLowerCase();
-  if (type === "rails" || type === "ruby") {
-    return "red";
-  } else if (type === "react") {
-    return "cyan";
-  } else if (type === "javascript" || type === "aws") {
-    return "yellow";
-  } else if (type === "typescript" || type === "tailwindcss") {
-    return "blue";
-  } else if (type === "chakraui" || type === "css") {
-    return "teal";
-  } else if (type === "mongodb" || type === "node") {
-    return "green";
-  } else if (type === "canvas") {
-    return "orange";
+  switch (type) {
+    case "rails":
+    case "ruby":
+      return "red";
+
+    case "react":
+      return "cyan";
+
+    case "javascript":
+    case "aws":
+      return "yellow";
+
+    case "typescript":
+    case "tailwind":
+      return "blue";
+
+    case "chakraui":
+    case "css":
+      return "teal";
+
+    case "mongodb":
+    case "node":
+      return "green";
+
+    case "canvas":
+      return "orange";
+
+    case "heroku":
+      return "purple";
+
+    case "socket.io":
+      return "gray";
   }
 };
 
@@ -55,16 +73,11 @@ export const Tag: React.FC<TagProps> = ({
 }) => {
   const propsOverride = {
     size: "sm",
+    my: "4px",
+    ml: "4px",
     verticalAlign: "middle",
     ...useTagStyles(colorScheme),
   };
-  if (!interactive) {
-    return (
-      <ChakraTag {...props} {...propsOverride}>
-        {name}
-      </ChakraTag>
-    );
-  }
 
   return (
     // <RouteLink to={`/posts?tag=${name}`}>
@@ -80,27 +93,3 @@ export interface TagsProps extends FlexProps {
   tags?: string[];
   tagProps?: Partial<TagProps>;
 }
-
-export const Tags: React.FC<TagsProps> = ({
-  tags,
-  interactive = true,
-  tagProps = {},
-  ...props
-}) => {
-  if (!tags || tags.length === 0) {
-    return null;
-  }
-  return (
-    <Flex alignItems='center' flexWrap='wrap' m='-2px' {...props}>
-      {tags.map((tag) => (
-        <Tag
-          key={tag}
-          name={tag}
-          interactive={interactive}
-          m='2px'
-          {...tagProps}
-        />
-      ))}
-    </Flex>
-  );
-};

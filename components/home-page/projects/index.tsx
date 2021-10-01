@@ -30,6 +30,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               <ProjectCard
                 title={project.title}
                 description={project.desc}
+                info={project.info}
                 blurHash={project.blurHash}
                 logo={project.logo}
                 link={project.link}

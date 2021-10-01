@@ -5,7 +5,6 @@ import {
   Text,
   useColorModeValue,
   Link,
-  Tooltip,
   Box,
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,6 +16,7 @@ import { RiShareBoxLine, RiGithubLine } from "react-icons/ri";
 interface ProjectCardProps {
   title: string;
   description: string;
+  info: string;
   logo: string;
   blurHash: string;
   link: string;
@@ -27,6 +27,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
+  info,
   logo,
   blurHash,
   link,
@@ -34,7 +35,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
 }) => {
   const linkColor = useLinkColor();
-  const textColor = useColorModeValue("gray.500", "gray.200");
+  const textColor = useColorModeValue("gray.900", "gray.200");
+  const textColorLight = useColorModeValue("gray.500", "gray.400");
 
   return (
     <motion.div layout>
@@ -88,11 +90,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           width={["100%", "100", "100%", "40%"]}
         >
           <VStack align='start' width='100%'>
-            <HStack spacing='1'>
+            <HStack spacing={1} wrap='wrap'>
               {technologies.map((tech, index) => (
                 <Tag
                   key={index}
-                  size='sm'
+                  size='xs'
                   name={tech}
                   colorScheme={getTagColor(tech)}
                 />
@@ -106,8 +108,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               animate={{ opacity: 1 }}
               exit={{ opacity: 1 }}
             >
-              <Text fontSize='sm' color={textColor}>
+              <Text fontSize='sm' pl={1} color={textColor} mb='auto'>
                 {description}
+              </Text>
+              <br />
+              <Text fontSize='sm' pl={1} color={textColorLight}>
+                {!!info.length && `* ${info}`}
               </Text>
             </motion.div>
           </AnimatePresence>

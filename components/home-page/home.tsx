@@ -98,7 +98,7 @@ const Home: React.FC = () => {
           </Box>
           <Box
             as='h2'
-            fontSize={["sm", "md", "lg"]}
+            fontSize={["sm", "lg", "xl"]}
             fontWeight='400'
             mt={[3, 5]}
             textAlign='left'
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
             code. I completed{" "}
             <Box
               as='strong'
-              fontSize={["sm", "md", "lg"]}
+              fontSize={["sm", "lg", "xl"]}
               color='red.500'
               fontWeight='600'
               whiteSpace='nowrap'
@@ -115,19 +115,19 @@ const Home: React.FC = () => {
               App Academy
             </Box>{" "}
             where I quickly absorbed the ins and outs of full-stack software
-            development, and breathed code for over 80 hours a week. I'm always
-            looking to learn new technologies, design patterns, or methods to
-            optimize my code quality and efficiency.
+            development, and breathed code for over 80 hours a week. I&apos;m
+            always looking to learn new technologies, design patterns, or
+            methods to optimize my code quality and efficiency.
           </Box>
           <Box
             as='h2'
-            fontSize={["sm", "md", "lg"]}
+            fontSize={["sm", "lg", "xl"]}
             fontWeight='400'
             mt={[3, 5]}
             textAlign='left'
           >
-            When I'm not coding, I'm usually lifting weights, hiking, building
-            PCs, watching stand up comedy, or watching combat sports.
+            When I&apos;m not coding, I&apos;m usually lifting weights, hiking,
+            building PCs, watching stand up comedy, or watching combat sports.
           </Box>
         </MotionFlex>
       </Flex>
