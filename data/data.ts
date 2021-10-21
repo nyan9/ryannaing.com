@@ -6,16 +6,28 @@ export const skillsArray = [
     image: "/assets/images/skills/react.png",
   },
   {
+    name: "Next.js",
+    description: "",
+    type: "frontend, backend",
+    image: "/assets/images/skills/nextjs.png",
+  },
+  {
     name: "Redux",
     description: "",
     type: "frontend",
     image: "/assets/images/skills/redux.png",
   },
   {
-    name: "Javascript",
+    name: "JavaScript",
     description: "",
     type: "frontend, backend",
     image: "/assets/images/skills/javascript.png",
+  },
+  {
+    name: "TypeScript",
+    description: "",
+    type: "frontend, backend",
+    image: "/assets/images/skills/typescript.png",
   },
   {
     name: "Ruby",
@@ -42,6 +54,12 @@ export const skillsArray = [
     image: "/assets/images/skills/nodejs.png",
   },
   {
+    name: "GraphQL",
+    description: "",
+    type: "frontend, backend",
+    image: "/assets/images/skills/graphql.png",
+  },
+  {
     name: "Postgres",
     description: "",
     type: "database",
@@ -60,10 +78,28 @@ export const skillsArray = [
     image: "/assets/images/skills/mongodb.png",
   },
   {
+    name: "Apollo",
+    description: "",
+    type: "frontend, backend",
+    image: "/assets/images/skills/apollo.png",
+  },
+  {
+    name: "Prisma",
+    description: "",
+    type: "backend",
+    image: "/assets/images/skills/prisma.png",
+  },
+  {
     name: "AWS",
     description: "",
     type: "database",
     image: "assets/images/skills/aws.png",
+  },
+  {
+    name: "Firebase",
+    description: "",
+    type: "backend",
+    image: "/assets/images/skills/firebase.png",
   },
   {
     name: "HTML5",
@@ -82,6 +118,12 @@ export const skillsArray = [
     description: "",
     type: "frontend",
     image: "/assets/images/skills/chakra.png",
+  },
+  {
+    name: "Tailwind CSS",
+    description: "",
+    type: "frontend",
+    image: "/assets/images/skills/tailwind.png",
   },
   {
     name: "Sass",
