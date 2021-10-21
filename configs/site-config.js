@@ -16,7 +16,7 @@ const siteConfig = {
         icon: <FaLinkedin />,
       },
       {
-        url: "https://drive.google.com/file/d/1pcALI5wprdKQV6fT2fqMy0UCtbrSdaze/view?usp=sharing",
+        url: "https://drive.google.com/file/d/1KCouuscP6CS2savDsSx2wsEFyunURYiG/view?usp=sharing",
         label: "Resume",
         icon: <FaCopy />,
       },
