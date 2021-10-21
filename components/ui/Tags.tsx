@@ -44,7 +44,6 @@ export const getTagColor = (type) => {
     case "firebase":
       return "yellow";
 
-    case "typescript":
     case "tailwind":
       return "blue";
 
