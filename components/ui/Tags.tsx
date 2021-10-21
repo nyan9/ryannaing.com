@@ -36,10 +36,12 @@ export const getTagColor = (type) => {
       return "red";
 
     case "react":
+    case "typescript":
       return "cyan";
 
     case "javascript":
     case "aws":
+    case "firebase":
       return "yellow";
 
     case "typescript":
@@ -58,9 +60,13 @@ export const getTagColor = (type) => {
       return "orange";
 
     case "heroku":
+    case "graphql":
       return "purple";
 
     case "socket.io":
+    case "nextjs":
+    case "prisma":
+    case "apollo":
       return "gray";
   }
 };
